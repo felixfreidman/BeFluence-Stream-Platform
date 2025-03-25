@@ -1,0 +1,15 @@
+.wrapperZoom {
+  background-color: $n_color800;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-family: "Nunito";
+  box-sizing: border-box;
+  padding-left: 320px;
+  min-height: 100vh;
+  cursor: default;
+
+  * {
+    box-sizing: border-box;
+  }
+}
