@@ -6,10 +6,14 @@
   font-family: "Nunito";
   box-sizing: border-box;
   padding-left: 320px;
-  min-height: 100vh;
+  height: 100%;
   cursor: default;
 
   * {
     box-sizing: border-box;
   }
+}
+
+.disabled {
+  pointer-events: none;
 }

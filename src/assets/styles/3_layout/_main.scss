@@ -1,2 +1,354 @@
-.page.mainPage {
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 30px 40px;
+  width: 100%;
+  height: 100%;
+
+  &__row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  &__pageHeader {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 22px;
+    color: $n_color100;
+  }
+}
+
+.mainPage {
+  &__searchLabel {
+    margin-left: 50px;
+    position: relative;
+    max-width: 352px;
+    width: 352px;
+    height: 42px;
+
+    &:hover {
+      path {
+        stroke: $p_accent;
+      }
+    }
+
+    &Img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      left: 14px;
+      width: 16px;
+      height: 16px;
+      z-index: 2;
+
+      path {
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  &__searchInput {
+    width: 100%;
+    height: 42px;
+    filter: drop-shadow(0px 2px 4px rgba(1, 5, 17, 0.2));
+    background-color: $n_color900;
+    border: 1px solid $s_color2;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: $n_color400;
+    padding: 14px 14px 14px 38px;
+    outline: none;
+    z-index: 1;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+      color: $n_color400;
+    }
+
+    &:focus {
+      border-color: $p_accent;
+      & ~ .mainPage__searchLabelImg {
+        path {
+          stroke: $p_accent;
+        }
+      }
+    }
+  }
+
+  &__filterButtons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 30px;
+  }
+
+  &__filterButton {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: $n_color900;
+    border: 1px solid $s_color2;
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+
+    &:hover {
+      path {
+        fill: $p_accent;
+      }
+    }
+
+    &Img {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      min-height: 40px;
+    }
+
+    &Container {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      &Header {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 18px;
+        color: $n_color100;
+      }
+
+      &Value {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: $n_color400;
+      }
+    }
+
+    &FilterOpener {
+      margin-left: auto;
+      width: 20px;
+      height: auto;
+
+      path {
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  &__bloggersTable {
+    margin-top: 30px;
+    margin-bottom: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background: $n_color900;
+    border: 1px solid $s_color2;
+    filter: drop-shadow(1px 1px 1px rgba(16, 25, 52, 0.4));
+    border-radius: 12px;
+    overflow: scroll;
+    height: 100%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .bloggersTable {
+    &__mainRow {
+      width: 100%;
+      padding: 25px 35px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid $s_color2;
+    }
+
+    &__mainHeader {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18px;
+      color: $n_color100;
+    }
+
+    &__counter {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 14px;
+      text-align: right;
+      color: $n_color400;
+
+      &Active {
+        color: $p_accent;
+      }
+    }
+
+    &__filterRow {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 200px 1fr 1fr 1fr 100px;
+      column-gap: 20px;
+      padding: 0 35px;
+    }
+
+    &__filterCell {
+      padding: 15px 0;
+      gap: 4px;
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 10px;
+      color: $n_color100;
+
+      svg {
+        width: 10px;
+        height: 10px;
+
+        &.activeFilter {
+          path {
+            fill: $p_accent;
+          }
+        }
+      }
+    }
+
+    &__contentRows {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      width: 100%;
+      overflow: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      max-height: 380px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &__contentRow {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 200px 1fr 1fr 1fr 100px;
+      column-gap: 20px;
+      padding: 0 35px;
+
+      &:nth-child(odd) {
+        background-color: $n_color700;
+      }
+
+      &:nth-child(even) {
+        background-color: $n_color900;
+      }
+    }
+
+    &__contentCell {
+      padding: 15px 0;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 14px;
+      color: $n_color400;
+      gap: 8px;
+
+      &Name {
+        color: $n_color100;
+      }
+
+      &Container {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+      }
+
+      &Img {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        min-height: 28px;
+      }
+    }
+  }
+
+  &__tableNavigation {
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &Buttons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    &Button {
+      width: 26px;
+      height: 26px;
+      min-width: 26px;
+      min-height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $n_color700;
+      border: 1px solid $n_color600;
+      border-radius: 4px;
+      cursor: pointer;
+
+      path {
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        path {
+          stroke: $p_accent;
+        }
+      }
+
+      .leftArrow {
+        transform: rotate(180deg);
+      }
+
+      .rightArrow {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  &__pagination {
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    &Item {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18px;
+      color: $n_color400;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: $p_accent;
+      }
+
+      &Active {
+        color: $p_accent;
+      }
+    }
+  }
 }
