@@ -18,48 +18,39 @@
             <span class="header__logoText">BeFluence Platform</span>
         </a>
         <div class="header__list">
+            <!-- TODO:Продумать меню и если надо, доработать пункты меню внутри основных пунктов -->
+            <!-- Закомментированное, это наработки по меню -->
             <span class="header__listItem">
-                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"
-                    class="header__listItemImg">
-                    <path d="M0.0683594 6.83355C0.0683594 6.41283 0.249846 6.01216 0.567115 5.73244L6.07891
+                <div class="header__listItemContainer">
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="header__listItemImg">
+                        <path d="M0.0683594 6.83355C0.0683594 6.41283 0.249846 6.01216 0.567115 5.73244L6.07891
                         0.872996C6.643 0.375668 7.49372 0.375668 8.05781 0.872995L13.5696 5.73244C13.8869 6.01216
                         14.0684 6.41283 14.0684 6.83355V13.0259C14.0684 13.84 13.4021 14.5 12.5802 14.5H1.55656C0.73465
                         14.5 0.0683594 13.84 0.0683594 13.0259V6.83355Z" fill="#AEB9E1" />
-                </svg>
-                <span class="header__listItemContent">Дашборд</span>
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg"
-                    class="header__listItemArrow">
-                    <path d="M1 0.862305L4 3.8623L7 0.862305" stroke="#AEB9E1" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </span>
-            <span class="header__listItem">
-                <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
-                    class="header__listItemImg">
-                    <path
-                        d="M0.943604 12.7391C0.943604 10.5946 2.68203 8.8562 4.8265 8.8562H9.17356C11.318 8.8562 13.0565 10.5946 13.0565 12.7391C13.0565 13.4539 12.477 14.0334 11.7622 14.0334H2.2379C1.52308 14.0334 0.943604 13.4539 0.943604 12.7391Z"
-                        fill="#AEB9E1" />
-                    <path
-                        d="M7.00236 7.86972C8.90855 7.86972 10.4538 6.32445 10.4538 4.41826C10.4538 2.51207 8.90855 0.966797 7.00236 0.966797C5.09617 0.966797 3.5509 2.51207 3.5509 4.41826C3.5509 6.32445 5.09617 7.86972 7.00236 7.86972Z"
-                        fill="#AEB9E1" />
-                </svg>
-                <span class="header__listItemContent">Блогеры</span>
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg"
-                    class="header__listItemArrow">
-                    <path d="M1 0.862305L4 3.8623L7 0.862305" stroke="#AEB9E1" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-
+                    </svg>
+                    <span class="header__listItemContent">Блогеры</span>
+                    <!-- <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="header__listItemArrow">
+                        <path d="M1 0.862305L4 3.8623L7 0.862305" stroke="#AEB9E1" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg> -->
+                </div>
+                <!-- <div class="header__listItemInnerMenu innerMenu">
+                    <span class="innerMenu__listItem"></span>
+                </div> -->
             </span>
             <div class="header__listDivider"></div>
             <span class="header__listItem">
-                <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
-                    class="header__listItemImg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M5.25563 0.5C4.97949 0.5 4.75563 0.723857 4.75563 1V3.61548L2.49258 2.30863C2.25344 2.17054 1.94767 2.25247 1.80962 2.49163L0.0674686 5.50976C-0.0705809 5.74892 0.011364 6.05475 0.250498 6.19284L2.51356 7.49969L0.250389 8.8066C0.011255 8.94469 -0.0706902 9.25052 0.0673594 9.48968L1.80952 12.5078C1.94757 12.747 2.25333 12.8289 2.49247 12.6908L4.75563 11.3839V14C4.75563 14.2761 4.97949 14.5 5.25563 14.5H8.73978C9.01593 14.5 9.23978 14.2761 9.23978 14V11.3839L11.5063 12.6928C11.7455 12.8309 12.0512 12.7489 12.1893 12.5098L13.9314 9.49163C14.0695 9.25247 13.9876 8.94665 13.7484 8.80855L11.4819 7.49969L13.7483 6.19088C13.9874 6.05279 14.0694 5.74697 13.9313 5.50781L12.1892 2.48968C12.0511 2.25052 11.7454 2.16859 11.5062 2.30668L9.23978 3.61549V1C9.23978 0.723858 9.01593 0.5 8.73979 0.5H5.25563ZM6.99914 9.37256C8.03324 9.37256 8.87155 8.53408 8.87155 7.49976C8.87155 6.46544 8.03324 5.62695 6.99914 5.62695C5.96503 5.62695 5.12672 6.46544 5.12672 7.49976C5.12672 8.53408 5.96503 9.37256 6.99914 9.37256Z"
-                        fill="#AEB9E1" />
-                </svg>
-                <span class="header__listItemContent">Настройки</span>
+                <div class="header__listItemContainer">
+                    <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="header__listItemImg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M5.25563 0.5C4.97949 0.5 4.75563 0.723857 4.75563 1V3.61548L2.49258 2.30863C2.25344 2.17054 1.94767 2.25247 1.80962 2.49163L0.0674686 5.50976C-0.0705809 5.74892 0.011364 6.05475 0.250498 6.19284L2.51356 7.49969L0.250389 8.8066C0.011255 8.94469 -0.0706902 9.25052 0.0673594 9.48968L1.80952 12.5078C1.94757 12.747 2.25333 12.8289 2.49247 12.6908L4.75563 11.3839V14C4.75563 14.2761 4.97949 14.5 5.25563 14.5H8.73978C9.01593 14.5 9.23978 14.2761 9.23978 14V11.3839L11.5063 12.6928C11.7455 12.8309 12.0512 12.7489 12.1893 12.5098L13.9314 9.49163C14.0695 9.25247 13.9876 8.94665 13.7484 8.80855L11.4819 7.49969L13.7483 6.19088C13.9874 6.05279 14.0694 5.74697 13.9313 5.50781L12.1892 2.48968C12.0511 2.25052 11.7454 2.16859 11.5062 2.30668L9.23978 3.61549V1C9.23978 0.723858 9.01593 0.5 8.73979 0.5H5.25563ZM6.99914 9.37256C8.03324 9.37256 8.87155 8.53408 8.87155 7.49976C8.87155 6.46544 8.03324 5.62695 6.99914 5.62695C5.96503 5.62695 5.12672 6.46544 5.12672 7.49976C5.12672 8.53408 5.96503 9.37256 6.99914 9.37256Z"
+                            fill="#AEB9E1" />
+                    </svg>
+                    <a class="header__listItemContent" href="/wp-admin" target="_blank">Настройки</a>
+                </div>
             </span>
         </div>
     </header>
@@ -79,6 +70,46 @@
                 </svg>
 
             </label>
+            <div class="layout layoutContainer">
+                <div class="layoutContainer__button openFilters">
+                    <svg width="718" height="618" viewBox="0 0 718 618" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M217.333 492.333C217.333 478.527 206.14 467.333 192.333 467.333H25.6666C11.8596 467.333 0.666626 478.527 0.666626 492.333C0.666626 506.14 11.8596 517.333 25.6666 517.333H192.333C206.14 517.333 217.333 506.14 217.333 492.333Z"
+                            fill="#FFFFFF" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M500.667 125.667C500.667 111.86 511.86 100.667 525.667 100.667H692.333C706.14 100.667 717.333 111.86 717.333 125.667C717.333 139.474 706.14 150.667 692.333 150.667H525.667C511.86 150.667 500.667 139.474 500.667 125.667Z"
+                            fill="#FFFFFF" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M717.333 492.333C717.333 478.527 706.14 467.333 692.333 467.333H392.333C378.527 467.333 367.333 478.527 367.333 492.333C367.333 506.14 378.527 517.333 392.333 517.333H692.333C706.14 517.333 717.333 506.14 717.333 492.333Z"
+                            fill="#FFFFFF" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M0.666626 125.667C0.666626 111.86 11.8596 100.667 25.6666 100.667H325.667C339.473 100.667 350.667 111.86 350.667 125.667C350.667 139.474 339.473 150.667 325.667 150.667H25.6666C11.8596 150.667 0.666626 139.474 0.666626 125.667Z"
+                            fill="#FFFFFF" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M167.333 425.667C167.333 393.45 193.45 367.333 225.667 367.333H359C391.217 367.333 417.333 393.45 417.333 425.667V559C417.333 591.217 391.217 617.333 359 617.333H225.667C193.45 617.333 167.333 591.217 167.333 559V425.667Z"
+                            fill="#FFFFFF" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M550.667 59C550.667 26.7833 524.55 0.666679 492.333 0.666679H359C326.783 0.666679 300.667 26.7833 300.667 59V192.333C300.667 224.55 326.783 250.667 359 250.667H492.333C524.55 250.667 550.667 224.55 550.667 192.333V59Z"
+                            fill="#FFFFFF" />
+                    </svg>
+                </div>
+            </div>
+            <div class="layout layoutContainer">
+                <div class="layoutContainer__button setTable">
+                    <svg width="600" height="568" viewBox="0 0 600 568" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M33.3334 200.667H566.667M33.3334 367.333H566.667M200 34V534M140 534H460C497.337 534 516.007 534 530.267 526.733C542.81 520.343 553.01 510.143 559.4 497.6C566.667 483.34 566.667 464.67 566.667 427.333V140.667C566.667 103.33 566.667 84.6613 559.4 70.4007C553.01 57.8563 542.81 47.6577 530.267 41.2663C516.007 34 497.337 34 460 34H140C102.663 34 83.9947 34 69.734 41.2663C57.1897 47.6577 46.991 57.8563 40.5997 70.4007C33.3334 84.6613 33.3334 103.33 33.3334 140.667V427.333C33.3334 464.67 33.3334 483.34 40.5997 497.6C46.991 510.143 57.1897 520.343 69.734 526.733C83.9947 534 102.663 534 140 534Z"
+                            stroke="#FFFFFF" stroke-width="66.6667" />
+                    </svg>
+                </div>
+                <div class="layoutContainer__button setGrid">
+                    <svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M685.714 0H571.429C508.314 0 457.143 51.1714 457.143 114.286V228.571C457.143 291.686 508.314 342.857 571.429 342.857H685.714C748.829 342.857 800 291.686 800 228.571V114.286C800 51.1714 748.829 0 685.714 0ZM685.714 457.143H571.429C508.314 457.143 457.143 508.314 457.143 571.429V685.714C457.143 748.829 508.314 800 571.429 800H685.714C748.829 800 800 748.829 800 685.714V571.429C800 508.314 748.829 457.143 685.714 457.143ZM228.571 457.143H114.286C51.1714 457.143 0 508.314 0 571.429V685.714C0 748.829 51.1714 800 114.286 800H228.571C291.686 800 342.857 748.829 342.857 685.714V571.429C342.857 508.314 291.686 457.143 228.571 457.143ZM228.571 0H114.286C51.1714 0 0 51.1714 0 114.286V228.571C0 291.686 51.1714 342.857 114.286 342.857H228.571C291.686 342.857 342.857 291.686 342.857 228.571V114.286C342.857 51.1714 291.686 0 228.571 0Z"
+                            fill="#FFFFFF" />
+                    </svg>
+                </div>
+            </div>
         </div>
         <div class="mainPage__filterButtons">
             <div class="mainPage__filterButton">
@@ -162,7 +193,7 @@
             <div class="bloggersTable__mainRow">
                 <div class="bloggersTable__mainHeader">Блогеры</div>
                 <div class="bloggersTable__counter">
-                    <span class="bloggersTable__counterActive">1-10</span>
+                    <span class="bloggersTable__counterActive">1-9</span>
                     &nbsp;из&nbsp;
                     <span>256</span>
                 </div>
@@ -407,6 +438,62 @@
                         <path d="M12.2499 7.36231L1.75 7.3623" stroke="white" stroke-linecap="round"
                             stroke-linejoin="round" />
                     </svg>
+                </div>
+            </div>
+        </div>
+        <div class="mainPage__filterContainer filterContainer">
+            <div class="filterContainer__darkLayer"></div>
+            <div class="filterContainer__filters">
+                <div class="filterContainer__closeButton">
+                    <svg width="350" height="350" viewBox="0 0 350 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M339.993 57.149C353.013 44.1314 353.013 23.026 339.993 10.0084C326.977 -3.00897 305.87 -3.00897 292.853 10.0084L175.003 127.86L57.1517 10.0084C44.134 -3.00897 23.0287 -3.00897 10.011 10.0084C-3.00629 23.026 -3.00629 44.1314 10.011 57.149L127.863 175L10.011 292.85C-3.00629 305.87 -3.00629 326.973 10.011 339.99C23.0287 353.01 44.134 353.01 57.1517 339.99L175.003 222.14L292.853 339.99C305.87 353.01 326.977 353.01 339.993 339.99C353.013 326.973 353.013 305.87 339.993 292.85L222.143 175L339.993 57.149Z"
+                            fill="#FFFFFF" />
+                    </svg>
+
+                </div>
+                <div class="filterContainer__row">
+                    <label for="set_platform" class="filterContainer__selectLabel">
+                        <span class="filterContainer__selectLabelHeader">Платформа</span>
+                        <select name="set_platform" id="set_platform" class="filterContainer__select">
+                            <option value="united_states">United States</option>
+                            <option value="brazil">Brazil</option>
+                            <option value="columbia">Columbia</option>
+                            <option value="mexico">Mexico</option>
+                        </select>
+                    </label>
+                    <label for="set_country" class="filterContainer__selectLabel">
+                        <span class="filterContainer__selectLabelHeader">Страна</span>
+                        <select name="set_country" id="set_country" class="filterContainer__select">
+                            <option value="twitch">Twitch</option>
+                            <option value="Kick">Kick</option>
+                            <option value="tiktok">TikTok</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="youtube">YouTube</option>
+                            <option value="telegram">Telegram</option>
+                        </select>
+                    </label>
+                    <label for="set_gamble" class="filterContainer__selectLabel">
+                        <span class="filterContainer__selectLabelHeader">Готов к гэмблингу</span>
+                        <select name="set_gamble" id="set_gamble" class="filterContainer__select">
+                            <option value="yes_gamble">Готов</option>
+                            <option value="no_gamble">Не готов</option>
+                        </select>
+                    </label>
+                    <label for="set_isWorked" class="filterContainer__selectLabel">
+                        <span class="filterContainer__selectLabelHeader">Работали ранее</span>
+                        <select name="set_isWorked" id="set_isWorked" class="filterContainer__select">
+                            <option value="yes_isWorked">Работали</option>
+                            <option value="no_isWorked">Не работали</option>
+                        </select>
+                    </label>
+                    <label for="set_isBlocked" class="filterContainer__selectLabel">
+                        <span class="filterContainer__selectLabelHeader">В блоке</span>
+                        <select name="set_isBlocked" id="set_isBlocked" class="filterContainer__select">
+                            <option value="yes_isBlocked">В блоке</option>
+                            <option value="no_isBlocked">Не в блоке</option>
+                        </select>
+                    </label>
                 </div>
             </div>
         </div>

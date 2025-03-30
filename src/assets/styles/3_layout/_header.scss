@@ -48,9 +48,10 @@
     &Item {
       width: 100%;
       padding: 14px 40px 14px 28px;
-      gap: 6px;
+      gap: 8px;
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      align-items: start;
       cursor: pointer;
 
       &:hover {
@@ -73,6 +74,13 @@
 
       &:last-child {
         margin-top: auto;
+      }
+
+      &Container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: 6px;
       }
 
       &Img {
