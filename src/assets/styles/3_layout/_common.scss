@@ -17,3 +17,24 @@
 .disabled {
   pointer-events: none;
 }
+
+// .anim__fadeIn {
+//   animation-name: fadeIn;
+//   animation-duration: 0.2s;
+//   animation-timing-function: ease;
+//   animation-fill-mode: forwards;
+//   animation-iteration-count: 1;
+// }
+
+// .anim__translateIn {
+//   animation-name: translateIn;
+//   animation-delay: 0.2s;
+//   animation-duration: 0.4s;
+//   animation-timing-function: ease;
+//   animation-fill-mode: forwards;
+//   animation-iteration-count: 1;
+// }
+
+.jsHidden {
+  display: none !important;
+}

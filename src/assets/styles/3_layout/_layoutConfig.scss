@@ -18,8 +18,13 @@
     justify-content: center;
     background: $n_color700;
     border: 1px solid $s_color2;
-    border-radius: 4px;
+    border-radius: 50%;
     cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: $p_accent;
+    }
 
     svg {
       width: 20px;
@@ -46,11 +51,25 @@
       }
     }
 
+    &Active.setTable {
+      border-color: $p_accent;
+      path {
+        stroke: $p_accent;
+      }
+    }
+
     &.setGrid {
       &:hover {
         path {
           fill: $p_accent;
         }
+      }
+    }
+
+    &Active.setGrid {
+      border-color: $p_accent;
+      path {
+        fill: $p_accent;
       }
     }
 

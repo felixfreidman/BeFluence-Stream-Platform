@@ -84,6 +84,17 @@
     }
   }
 
+  &__layout {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: start;
+
+    &Active {
+      display: flex !important;
+    }
+  }
+
   &__filterButtons {
     width: 100%;
     display: grid;
@@ -100,8 +111,10 @@
     border-radius: 8px;
     padding: 20px;
     cursor: pointer;
+    transition: all 0.3s ease;
 
     &:hover {
+      border-color: $p_accent;
       path {
         fill: $p_accent;
       }
@@ -281,6 +294,206 @@
         height: 28px;
         min-width: 28px;
         min-height: 28px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__bloggersGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    column-gap: 30px;
+    row-gap: 30px;
+    margin-top: 30px;
+
+    &Tile {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      border: 1px solid $s_color2;
+      border-radius: 12px;
+      position: relative;
+      background: $n_color900;
+      cursor: pointer;
+    }
+  }
+
+  .gridTile {
+    &__mainInfoContainer {
+      width: 100%;
+      display: flex;
+      align-items: start;
+      gap: 16px;
+      padding: 20px 16px;
+    }
+
+    &__personContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+
+      &Row {
+        gap: 8px;
+        display: flex;
+        align-items: center;
+      }
+
+      &Key {
+        gap: 4px;
+        display: flex;
+        align-items: center;
+        &Image {
+          width: 12px;
+          height: 12px;
+          min-width: 12px;
+          min-height: 12px;
+        }
+      }
+
+      &Value {
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 14px;
+        color: $p_accent;
+      }
+    }
+
+    &__imgContainer {
+      width: 60px;
+      height: 60px;
+      border: 1px solid $s_color2;
+      padding: 5px;
+      border-radius: 50%;
+    }
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+
+    &__infoContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 10px;
+
+      &Row {
+        gap: 8px;
+        display: flex;
+        align-items: center;
+      }
+
+      &Key {
+        gap: 8px;
+        display: flex;
+        align-items: center;
+        &Image {
+          width: 12px;
+          height: 12px;
+          min-width: 12px;
+          min-height: 12px;
+        }
+
+        span {
+          font-weight: 600;
+          font-size: 10px;
+          line-height: 10px;
+          color: $n_color400;
+        }
+      }
+
+      &Value {
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 14px;
+        color: $p_accent;
+      }
+    }
+
+    &__subInfoContainer {
+      border-top: 1px solid $s_color2;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      padding: 20px 16px;
+      gap: 16px;
+      height: 100%;
+
+      &Comment {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 8px;
+
+        &Header {
+          font-weight: 600;
+          font-size: 10px;
+          line-height: 10px;
+          color: $n_color400;
+        }
+
+        &Content {
+          font-weight: 500;
+          font-size: 10px;
+          line-height: 14px;
+          color: $n_color100;
+        }
+      }
+
+      &Warning {
+        margin-top: auto;
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-radius: 4px;
+        background: rgba($color: $p_warning, $alpha: 0.3);
+      }
+    }
+
+    .warningLabel {
+      &__img {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        min-height: 20px;
+      }
+
+      &__text {
+        font-weight: 800;
+        font-size: 10px;
+        line-height: 14px;
+        color: $n_color100;
+        text-transform: uppercase;
+      }
+    }
+
+    &__like {
+      position: absolute;
+      top: 20px;
+      right: 16px;
+      width: 16px;
+      height: 16px;
+    }
+
+    &__edit {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      width: 16px;
+      height: 16px;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      .gridTile__edit {
+        opacity: 1 !important;
       }
     }
   }

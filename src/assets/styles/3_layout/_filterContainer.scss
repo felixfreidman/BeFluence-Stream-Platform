@@ -7,6 +7,12 @@
     left: 0;
     z-index: 10;
     background: rgba($color: $n_color900, $alpha: 0.6);
+    opacity: 0;
+    transition: all 0.2s ease;
+
+    &.anim__fadeIn {
+      opacity: 1 !important;
+    }
   }
 
   &__filters {
@@ -15,13 +21,20 @@
     top: 0;
     z-index: 12;
     width: 100%;
-    height: 30%;
+    height: fit-content;
+    min-height: 30%;
     border-radius: 0 0 32px 32px;
     background-color: $s_color1;
-    padding: 32px;
+    padding: 64px 32px 32px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: translateY(-100vh);
+    transition: all 0.4s ease;
+
+    &.anim__translateIn {
+      transform: translateY(0) !important;
+    }
   }
 
   &__closeButton {

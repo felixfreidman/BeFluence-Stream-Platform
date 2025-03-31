@@ -112,3 +112,89 @@ function calcZoom(initZoom, initWidth, currentWidth, zoomLevelPerPixel) {
 }
 window.addEventListener('resize', reportWindowSize);
 document.addEventListener('DOMContentLoaded', reportWindowSize);
+if (document.querySelector('main').classList.contains('mainPage')) {
+  var parentFilterContainer = document.querySelector('.mainPage__filterContainer');
+  var filerDarkLayer = parentFilterContainer.querySelector('.filterContainer__darkLayer');
+  var filterContainer = parentFilterContainer.querySelector('.filterContainer__filters');
+  var closeFilterButton = parentFilterContainer.querySelector('.filterContainer__closeButton');
+  var openFilterButton = document.querySelector('.openFilters');
+  openFilterButton.addEventListener('click', function () {
+    parentFilterContainer.classList.remove('jsHidden');
+    setTimeout(function () {
+      filerDarkLayer.classList.add('anim__fadeIn');
+    }, 100);
+    setTimeout(function () {
+      filterContainer.classList.add('anim__translateIn');
+    }, 200);
+  });
+  closeFilterButton.addEventListener('click', function () {
+    filterContainer.classList.remove('anim__translateIn');
+    setTimeout(function () {
+      filerDarkLayer.classList.remove('anim__fadeIn');
+    }, 200);
+    setTimeout(function () {
+      parentFilterContainer.classList.add('jsHidden');
+    }, 300);
+  });
+  filerDarkLayer.addEventListener('click', function () {
+    filterContainer.classList.remove('anim__translateIn');
+    setTimeout(function () {
+      filerDarkLayer.classList.remove('anim__fadeIn');
+    }, 200);
+    setTimeout(function () {
+      parentFilterContainer.classList.add('jsHidden');
+    }, 300);
+  });
+}
+if (document.querySelector('main').classList.contains('mainPage')) {
+  var setTableButton = document.querySelector('.setTable');
+  var setGridButton = document.querySelector('.setGrid');
+  var layoutTable = document.querySelector('.mainPage__layoutTable');
+  var layoutGrid = document.querySelector('.mainPage__layoutGrid');
+  setTableButton.addEventListener('click', function () {
+    setTableButton.classList.add('layoutContainer__buttonActive');
+    setGridButton.classList.remove('layoutContainer__buttonActive');
+    layoutTable.classList.add('mainPage__layoutActive');
+    layoutGrid.classList.remove('mainPage__layoutActive');
+    localStorage.setItem('lauout_pref', 'table');
+  });
+  setGridButton.addEventListener('click', function () {
+    setGridButton.classList.add('layoutContainer__buttonActive');
+    setTableButton.classList.remove('layoutContainer__buttonActive');
+    layoutGrid.classList.add('mainPage__layoutActive');
+    layoutTable.classList.remove('mainPage__layoutActive');
+    localStorage.setItem('lauout_pref', 'grid');
+  });
+}
+window.addEventListener('load', function () {
+  if (document.querySelector('main').classList.contains('mainPage')) {
+    initLayout();
+  }
+});
+function initLayout() {
+  var layoutPref = localStorage.getItem('lauout_pref');
+  var setTableButton = document.querySelector('.setTable');
+  var setGridButton = document.querySelector('.setGrid');
+  var layoutTable = document.querySelector('.mainPage__layoutTable');
+  var layoutGrid = document.querySelector('.mainPage__layoutGrid');
+  switch (layoutPref) {
+    case "table":
+      setTableButton.classList.add('layoutContainer__buttonActive');
+      setGridButton.classList.remove('layoutContainer__buttonActive');
+      layoutTable.classList.add('mainPage__layoutActive');
+      layoutGrid.classList.remove('mainPage__layoutActive');
+      break;
+    case "grid":
+      setGridButton.classList.add('layoutContainer__buttonActive');
+      setTableButton.classList.remove('layoutContainer__buttonActive');
+      layoutGrid.classList.add('mainPage__layoutActive');
+      layoutTable.classList.remove('mainPage__layoutActive');
+      break;
+    default:
+      setTableButton.classList.add('layoutContainer__buttonActive');
+      setGridButton.classList.remove('layoutContainer__buttonActive');
+      layoutTable.classList.add('mainPage__layoutActive');
+      layoutGrid.classList.remove('mainPage__layoutActive');
+      break;
+  }
+}
