@@ -1,26 +1,3 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  padding: 30px 40px;
-  width: 100%;
-  height: 100%;
-
-  &__row {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    margin-bottom: 50px;
-  }
-
-  &__pageHeader {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 22px;
-    color: $n_color100;
-  }
-}
-
 .mainPage {
   &__searchLabel {
     margin-left: 50px;
@@ -254,11 +231,19 @@
     }
 
     &__contentRow {
+      position: relative;
       width: 100%;
       display: grid;
       grid-template-columns: 200px 1fr 1fr 1fr 100px;
       column-gap: 20px;
       padding: 0 35px;
+      cursor: pointer;
+
+      &:hover {
+        .bloggersTable__edit {
+          opacity: 1;
+        }
+      }
 
       &:nth-child(odd) {
         background-color: $n_color700;
@@ -296,6 +281,18 @@
         min-height: 28px;
         border-radius: 50%;
       }
+    }
+
+    &__edit {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 16px;
+      margin: auto 0;
+      width: 16px;
+      height: 16px;
+      opacity: 0;
+      transition: all 0.3s ease;
     }
   }
 
