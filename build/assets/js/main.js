@@ -112,6 +112,35 @@ function calcZoom(initZoom, initWidth, currentWidth, zoomLevelPerPixel) {
 }
 window.addEventListener('resize', reportWindowSize);
 document.addEventListener('DOMContentLoaded', reportWindowSize);
+if (document.querySelector('main').classList.contains('editPage')) {
+  // Textarea Limit Control
+
+  var commentTextarea = document.querySelector('.editContainer__formTextarea');
+  var commentTextareaSymbolCounter = document.querySelector('.editContainer__formTextareaSymbolCounter');
+  var maxValue = 580;
+  commentTextarea.addEventListener('input', function () {
+    commentTextareaSymbolCounter.textContent = maxValue - commentTextarea.value.length;
+    if (parseInt(commentTextareaSymbolCounter.textContent) <= 50) {
+      commentTextareaSymbolCounter.classList.add('lowSymbols');
+      commentTextareaSymbolCounter.classList.remove('noSymbols');
+    } else if (parseInt(commentTextareaSymbolCounter.textContent) > 50) {
+      commentTextareaSymbolCounter.classList.remove('noSymbols');
+      commentTextareaSymbolCounter.classList.remove('lowSymbols');
+    }
+    if (parseInt(commentTextareaSymbolCounter.textContent) <= 0) {
+      commentTextareaSymbolCounter.classList.remove('lowSymbols');
+      commentTextareaSymbolCounter.classList.add('noSymbols');
+    }
+  });
+  commentTextarea.addEventListener('keydown', function (event) {
+    var key = event.keyCode || event.charCode;
+    if (parseInt(commentTextareaSymbolCounter.textContent) <= 0) {
+      if (key !== 8 && key !== 46) {
+        event.preventDefault();
+      }
+    }
+  });
+}
 if (document.querySelector('main').classList.contains('mainPage')) {
   var parentFilterContainer = document.querySelector('.mainPage__filterContainer');
   var filerDarkLayer = parentFilterContainer.querySelector('.filterContainer__darkLayer');
@@ -170,6 +199,10 @@ window.addEventListener('load', function () {
   if (document.querySelector('main').classList.contains('mainPage')) {
     initLayout();
   }
+  if (document.querySelector('main').classList.contains('editPage')) {
+    initFormInactive();
+    initCountTextareaValue();
+  }
 });
 function initLayout() {
   var layoutPref = localStorage.getItem('lauout_pref');
@@ -197,4 +230,31 @@ function initLayout() {
       layoutGrid.classList.remove('mainPage__layoutActive');
       break;
   }
+}
+function initCountTextareaValue() {
+  var commentTextareaSymbolCounter = document.querySelector('.editContainer__formTextareaSymbolCounter');
+  var commentTextarea = document.querySelector('.editContainer__formTextarea');
+  var maxValue = 580;
+  commentTextareaSymbolCounter.textContent = maxValue - commentTextarea.value.length;
+  if (parseInt(commentTextareaSymbolCounter.textContent) <= 50) {
+    commentTextareaSymbolCounter.classList.add('lowSymbols');
+  }
+  if (parseInt(commentTextareaSymbolCounter.textContent) <= 0) {
+    commentTextareaSymbolCounter.classList.add('noSymbols');
+  }
+}
+function initFormInactive() {
+  var editDataForm = document.querySelector('.editContainer__form');
+  var allPersonalInputs = editDataForm.querySelectorAll('input');
+  var personalTextarea = editDataForm.querySelectorAll('textarea');
+  setFormInactive(allPersonalInputs);
+  setFormInactive(personalTextarea);
+}
+function setFormInactive(nodeList) {
+  nodeList.forEach(function (node) {
+    node.setAttribute('readonly', true);
+    node.setAttribute('disabled', true);
+    node.setAttribute('placeholder', 'Пока тут пусто :(');
+    node.classList.add('showModeActive');
+  });
 }

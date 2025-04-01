@@ -2,6 +2,11 @@ window.addEventListener('load', () => {
     if (document.querySelector('main').classList.contains('mainPage')) {
         initLayout()
     }
+
+    if (document.querySelector('main').classList.contains('editPage')) {
+        initFormInactive()
+        initCountTextareaValue()
+    }
 })
 
 function initLayout() {
@@ -31,4 +36,35 @@ function initLayout() {
             layoutGrid.classList.remove('mainPage__layoutActive')
             break;
     }
+}
+
+function initCountTextareaValue() {
+    const commentTextareaSymbolCounter = document.querySelector('.editContainer__formTextareaSymbolCounter');
+    const commentTextarea = document.querySelector('.editContainer__formTextarea');
+    const maxValue = 580;
+    commentTextareaSymbolCounter.textContent = maxValue - commentTextarea.value.length;
+    if (parseInt(commentTextareaSymbolCounter.textContent) <= 50) {
+        commentTextareaSymbolCounter.classList.add('lowSymbols')
+    }
+
+    if (parseInt(commentTextareaSymbolCounter.textContent) <= 0) {
+        commentTextareaSymbolCounter.classList.add('noSymbols')
+    }
+}
+
+function initFormInactive() {
+    const editDataForm = document.querySelector('.editContainer__form');
+    const allPersonalInputs = editDataForm.querySelectorAll('input');
+    const personalTextarea = editDataForm.querySelectorAll('textarea');
+    setFormInactive(allPersonalInputs)
+    setFormInactive(personalTextarea)
+}
+
+function setFormInactive(nodeList) {
+    nodeList.forEach(node => {
+        node.setAttribute('readonly', true);
+        node.setAttribute('disabled', true);
+        node.setAttribute('placeholder', 'Пока тут пусто :(')
+        node.classList.add('showModeActive')
+    })
 }

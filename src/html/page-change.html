@@ -62,7 +62,7 @@
             <span class="editSection__header">Основная информация о блогере</span>
             <span class="editSection__subheader">Для изменения информации нажмите на кнопку «Изменить»</span>
             <div class="editContainer">
-                <form action="" method="post" class="editContainer__form">
+                <form action="" method="post" class="editContainer__form editFormInactive">
                     <div class="editContainer__formGrid">
                         <div class="editContainer__formRow">
                             <label for="streamer_name" class="editContainer__formLabel">
@@ -322,6 +322,16 @@
                                         <span class="editContainer__formCheckboxTogglerCheckmark"></span>
                                     </div>
                                 </label>
+                            </div>
+                        </div>
+                        <div class="editContainer__formColumn">
+                            <div class="editContainer__formColumn">
+                                <label for="streamer_comment" class="editContainer__formTextareaLabel">
+                                    <span class="specialKey">Комментарий</span>
+                                </label>
+                                <textarea name="streamer_comment" id="streamer_comment"
+                                    class="editContainer__formTextarea" placeholder="Комментарий..."></textarea>
+                                <span class="editContainer__formTextareaSymbolCounter">675</span>
                             </div>
                         </div>
                     </div>

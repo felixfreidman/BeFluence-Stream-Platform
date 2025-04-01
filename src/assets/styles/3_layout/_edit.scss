@@ -83,12 +83,13 @@
         height: 1px;
         width: 100%;
         max-width: 450px;
-        background-color: $p_accent;
+        // background-color: $p_accent;
+        background-color: $s_color2;
       }
 
       &Input {
         width: 100%;
-        max-width: 400px;
+        max-width: 280px;
         height: 42px;
         filter: drop-shadow(0px 2px 4px rgba(1, 5, 17, 0.2));
         background-color: $n_color900;
@@ -112,11 +113,12 @@
 
         &:focus {
           border-color: $p_accent;
-          & ~ .mainPage__searchLabelImg {
-            path {
-              stroke: $p_accent;
-            }
-          }
+        }
+
+        &.showModeActive {
+          border: none !important;
+          filter: none !important;
+          color: $p_accent !important;
         }
       }
 
@@ -126,6 +128,7 @@
         flex-direction: column;
         align-items: start;
         gap: 20px;
+        position: relative;
 
         .specialKey {
           min-width: 220px;
@@ -166,6 +169,78 @@
           box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15),
             0px 3px 1px rgba(0, 0, 0, 0.06);
           transition: all 0.5s ease;
+        }
+      }
+
+      &Textarea {
+        width: 100%;
+        filter: drop-shadow(0px 2px 4px rgba(1, 5, 17, 0.2));
+        background-color: $n_color900;
+        border: 1px solid $s_color2;
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        color: $n_color400;
+        padding: 11px 14px;
+        outline: none;
+        z-index: 1;
+        transition: all 0.3s ease;
+        height: 122px;
+        resize: none;
+
+        &::placeholder {
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 14px;
+          color: $n_color400;
+        }
+
+        &:focus {
+          border-color: $p_accent;
+        }
+
+        &Label {
+          display: flex;
+          align-items: center;
+          span {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            color: $n_color100;
+          }
+        }
+
+        &SymbolCounter {
+          z-index: 3;
+          position: absolute;
+          right: 0;
+          bottom: -16px;
+          font-weight: 300;
+          font-size: 8px;
+          line-height: 8px;
+          color: $n_color400;
+          transition: all 0.3s ease;
+          pointer-events: none;
+
+          &.lowSymbols {
+            color: $s_color5;
+          }
+
+          &.noSymbols {
+            color: $p_warning;
+          }
+        }
+
+        &.showModeActive {
+          border: none !important;
+          filter: none !important;
+          color: $p_accent !important;
+          padding-left: 0 !important;
+        }
+
+        &.showModeActive ~ .editContainer__formTextareaSymbolCounter {
+          opacity: 0;
         }
       }
     }
