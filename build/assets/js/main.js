@@ -140,6 +140,50 @@ if (document.querySelector('main').classList.contains('editPage')) {
       }
     }
   });
+
+  // Enter Edit Mode
+
+  var editButton = document.querySelector('.editButton');
+  var editForm = document.querySelector('.editContainer__form');
+  editButton.addEventListener('click', function () {
+    editButton.classList.remove('jsOpacityShow');
+    initLoader();
+    setTimeout(function () {
+      editForm.classList.add('editMode');
+      editForm.classList.remove('showMode');
+      initFormActive();
+      setTimeout(deinitLoader, 1000);
+    }, 300);
+  });
+}
+function initLoader() {
+  var loaderAnimation = document.querySelector('.loaderAnimation');
+  var loaderLayer = document.querySelector('.editPage__layer');
+  loaderLayer.classList.add('jsOpacityShow');
+  loaderAnimation.classList.add('loader');
+}
+function deinitLoader() {
+  var loaderAnimation = document.querySelector('.loaderAnimation');
+  var loaderLayer = document.querySelector('.editPage__layer');
+  loaderLayer.classList.remove('jsOpacityShow');
+  loaderAnimation.classList.remove('loader');
+}
+function initFormActive() {
+  var editDataForm = document.querySelector('.editContainer__form');
+  var allPersonalInputs = editDataForm.querySelectorAll('input');
+  var personalTextarea = editDataForm.querySelectorAll('textarea');
+  setFormActive(allPersonalInputs);
+  setFormActive(personalTextarea);
+}
+function setFormActive(nodeList) {
+  nodeList.forEach(function (node) {
+    node.removeAttribute('readonly');
+    node.removeAttribute('disabled');
+    if (node.getAttribute('data-edit')) {
+      node.setAttribute('placeholder', node.getAttribute('data-edit'));
+    }
+    node.classList.remove('showModeActive');
+  });
 }
 if (document.querySelector('main').classList.contains('mainPage')) {
   var parentFilterContainer = document.querySelector('.mainPage__filterContainer');
@@ -254,7 +298,9 @@ function setFormInactive(nodeList) {
   nodeList.forEach(function (node) {
     node.setAttribute('readonly', true);
     node.setAttribute('disabled', true);
-    node.setAttribute('placeholder', 'Пока тут пусто :(');
+    if (node.getAttribute('data-show')) {
+      node.setAttribute('placeholder', node.getAttribute('data-show'));
+    }
     node.classList.add('showModeActive');
   });
 }

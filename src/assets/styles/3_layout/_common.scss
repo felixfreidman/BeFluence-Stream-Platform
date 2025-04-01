@@ -62,3 +62,8 @@
 .jsHidden {
   display: none !important;
 }
+
+.jsOpacityShow {
+  opacity: 1 !important;
+  pointer-events: all;
+}

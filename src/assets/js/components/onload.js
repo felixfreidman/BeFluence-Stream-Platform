@@ -64,7 +64,9 @@ function setFormInactive(nodeList) {
     nodeList.forEach(node => {
         node.setAttribute('readonly', true);
         node.setAttribute('disabled', true);
-        node.setAttribute('placeholder', 'Пока тут пусто :(')
+        if (node.getAttribute('data-show')) {
+            node.setAttribute('placeholder', node.getAttribute('data-show'))
+        }
         node.classList.add('showModeActive')
     })
 }
