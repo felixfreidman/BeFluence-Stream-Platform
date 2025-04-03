@@ -79,7 +79,8 @@ deleteWarningSpans();
 var wrapperZoom = document.querySelector('.wrapperZoom');
 var initZoom = 1;
 function reportWindowSize() {
-  var currentWidth = window.innerWidth;
+  var currentWidth = window.screen.width;
+  console.log(currentWidth);
   var initWidth = 0;
   var zoomLevelPerPixel = 0;
   var zoomLevel = 0;
@@ -107,6 +108,10 @@ function reportWindowSize() {
   }
 }
 function calcZoom(initZoom, initWidth, currentWidth, zoomLevelPerPixel) {
+  console.log(initZoom);
+  console.log(initWidth);
+  console.log(currentWidth);
+  console.log(zoomLevelPerPixel);
   var zoomLevel = initZoom - (initWidth - currentWidth) * zoomLevelPerPixel;
   wrapperZoom.style.zoom = zoomLevel;
 }
@@ -239,6 +244,18 @@ if (document.querySelector('main').classList.contains('mainPage')) {
     localStorage.setItem('lauout_pref', 'grid');
   });
 }
+// if (document.querySelector('main').classList.contains('mainPage')) {
+//     window.addEventListener('resize', changeTableHeight)
+//     document.addEventListener('DOMContentLoaded', changeTableHeight)
+// }
+
+// function changeTableHeight() {
+//     // const contentRows = document.querySelector('.bloggersTable__contentRows');
+//     const currentHeight = window.innerHeight;
+//     const currentZoom = document.querySelector('.wrapperZoom').style.zoom;
+//     const currentPage = document.querySelector('.mainPage');
+//     currentPage.style.minHeight = `${currentHeight / currentZoom}px`;
+// }
 window.addEventListener('load', function () {
   if (document.querySelector('main').classList.contains('mainPage')) {
     initLayout();

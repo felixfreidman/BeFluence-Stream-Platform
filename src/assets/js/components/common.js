@@ -2,7 +2,9 @@ const wrapperZoom = document.querySelector('.wrapperZoom');
 let initZoom = 1;
 
 function reportWindowSize() {
-    const currentWidth = window.innerWidth;
+    let currentWidth = window.screen.width;
+    console.log(currentWidth);
+
     let initWidth = 0;
     let zoomLevelPerPixel = 0;
     let zoomLevel = 0;
@@ -32,6 +34,11 @@ function reportWindowSize() {
 }
 
 function calcZoom(initZoom, initWidth, currentWidth, zoomLevelPerPixel) {
+    console.log(initZoom);
+    console.log(initWidth);
+    console.log(currentWidth);
+    console.log(zoomLevelPerPixel);
+
     let zoomLevel = initZoom - ((initWidth - currentWidth) * zoomLevelPerPixel);
     wrapperZoom.style.zoom = zoomLevel;
 }

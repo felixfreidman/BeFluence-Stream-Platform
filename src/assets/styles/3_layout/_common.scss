@@ -67,3 +67,28 @@
   opacity: 1 !important;
   pointer-events: all;
 }
+
+@media screen and (max-width: 960px) {
+  .wrapperZoom {
+    padding-left: 0;
+  }
+
+  .main {
+    padding: 76px 12px 40px;
+
+    &__row {
+      margin-bottom: 12px;
+      display: grid;
+      grid-template-columns: 1fr;
+      column-gap: 12px;
+
+      .layoutTogglers {
+        display: none !important;
+      }
+    }
+
+    &__pageHeader {
+      display: none;
+    }
+  }
+}
