@@ -1,0 +1,557 @@
+.editPage {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  &__editSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+  }
+
+  .editSection {
+    &__header {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18px;
+      color: $n_color100;
+    }
+
+    &__subheader {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 14px;
+      color: $n_color400;
+    }
+  }
+
+  .editContainer {
+    width: 100%;
+    background: $n_color900;
+    border-radius: 12px;
+    border: 1px solid $s_color2;
+    padding: 34px;
+    margin-top: 22px;
+    position: relative;
+    overflow: hidden;
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 24px;
+
+      &.showMode {
+        .editContainer__formButton {
+          display: none;
+        }
+      }
+
+      &.editMode {
+        .editContainer__formDivider {
+          background-color: $p_accent;
+        }
+        .editContainer__formCheckboxToggler {
+          cursor: pointer;
+        }
+        .editContainer__formButton {
+          display: flex;
+        }
+      }
+
+      &Row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      &Label {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        height: 100%;
+
+        svg {
+          width: 12px;
+          height: 12px;
+          min-width: 12px;
+          min-height: 12px;
+        }
+
+        span {
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 14px;
+          color: $n_color100;
+        }
+      }
+
+      &Grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 30px;
+        grid-template-rows: auto auto;
+        row-gap: 30px;
+      }
+
+      &Divider {
+        height: 1px;
+        width: 100%;
+        max-width: 450px;
+        // background-color: $p_accent;
+        background-color: $s_color2;
+      }
+
+      &Input {
+        width: 100%;
+        max-width: 280px;
+        height: 42px;
+        filter: drop-shadow(0px 2px 4px rgba(1, 5, 17, 0.2));
+        background-color: $n_color900;
+        border: 1px solid $s_color2;
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        color: $n_color400;
+        padding: 14px;
+        outline: none;
+        z-index: 1;
+        transition: all 0.3s ease;
+
+        &::placeholder {
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 14px;
+          color: $n_color400;
+        }
+
+        &:focus {
+          border-color: $p_accent;
+        }
+
+        &.showModeActive {
+          border: none !important;
+          filter: none !important;
+          color: $p_accent !important;
+        }
+      }
+
+      &Column {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 20px;
+        position: relative;
+
+        .specialKey {
+          min-width: 220px;
+        }
+      }
+
+      &Checkbox {
+        display: none;
+
+        &:checked ~ .editContainer__formLabel {
+          .editContainer__formCheckboxToggler {
+            background: $h_togglerActive;
+          }
+          .editContainer__formCheckboxTogglerCheckmark {
+            background: $n_color100;
+            left: 18px;
+          }
+        }
+      }
+
+      &CheckboxToggler {
+        width: 40px;
+        height: 24px;
+        border-radius: 40px;
+        background: $h_togglerInactive;
+        background: rgba($color: $h_togglerInactive, $alpha: 0.32);
+        position: relative;
+        transition: all 0.5s ease;
+
+        &Checkmark {
+          position: absolute;
+          top: 2px;
+          left: 2px;
+          height: 20px;
+          width: 20px;
+          background: $n_color100;
+          border-radius: 50%;
+          box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15),
+            0px 3px 1px rgba(0, 0, 0, 0.06);
+          transition: all 0.5s ease;
+        }
+      }
+
+      &Textarea {
+        width: 100%;
+        filter: drop-shadow(0px 2px 4px rgba(1, 5, 17, 0.2));
+        background-color: $n_color900;
+        border: 1px solid $s_color2;
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        color: $n_color400;
+        padding: 11px 14px;
+        outline: none;
+        z-index: 1;
+        transition: all 0.3s ease;
+        height: 122px;
+        resize: none;
+
+        &::placeholder {
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 14px;
+          color: $n_color400;
+        }
+
+        &:focus {
+          border-color: $p_accent;
+        }
+
+        &Label {
+          display: flex;
+          align-items: center;
+          span {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            color: $n_color100;
+          }
+        }
+
+        &SymbolCounter {
+          z-index: 3;
+          position: absolute;
+          right: 0;
+          bottom: -16px;
+          font-weight: 300;
+          font-size: 8px;
+          line-height: 8px;
+          color: $n_color400;
+          transition: all 0.3s ease;
+          pointer-events: none;
+
+          &.lowSymbols {
+            color: $s_color5;
+          }
+
+          &.noSymbols {
+            color: $p_warning;
+          }
+        }
+
+        &.showModeActive {
+          border: none !important;
+          filter: none !important;
+          color: $p_accent !important;
+          padding: 0 !important;
+        }
+
+        &.showModeActive ~ .editContainer__formTextareaSymbolCounter {
+          opacity: 0;
+        }
+      }
+
+      &Button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 50px;
+        background: transparent;
+        border-radius: 30px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 18px;
+        color: $n_color100;
+        border: 0;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+
+        &::before {
+          content: "";
+          width: 400px;
+          height: 400px;
+          display: block;
+          position: absolute;
+          top: -150px;
+          left: -100px;
+          background: linear-gradient(
+            135deg,
+            $p_accent 38.24%,
+            $h_togglerActive 70.94%
+          );
+          transition: all 0.6s ease;
+          pointer-events: none;
+        }
+
+        &::after {
+          content: "Сохранить";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: auto;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 18px;
+          color: $n_color100;
+          pointer-events: none;
+        }
+
+        &:hover {
+          &::before {
+            transform: rotate(225deg);
+          }
+        }
+      }
+    }
+  }
+
+  &__layer {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    background: $n_color900;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__editButton {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    background: transparent;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    color: $n_color100;
+    border: 0;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 25;
+    opacity: 0;
+    transition: all 0.3s ease;
+
+    &::before {
+      content: "";
+      width: 400px;
+      height: 400px;
+      display: block;
+      position: absolute;
+      top: -150px;
+      left: -100px;
+      background: linear-gradient(135deg, $s_color3 38.24%, $s_color4 70.94%);
+      transition: all 0.6s ease;
+      pointer-events: none;
+    }
+
+    &::after {
+      content: "Изменить";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18px;
+      color: $n_color100;
+      pointer-events: none;
+    }
+
+    &:hover {
+      &::before {
+        transform: rotate(225deg);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .editPage {
+    .main__row {
+      display: none;
+    }
+
+    .editSection {
+      &__header {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 18px;
+        color: $n_color100;
+      }
+
+      &__subheader {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 14px;
+        color: $n_color400;
+      }
+    }
+
+    .editContainer {
+      border-radius: 16px;
+      padding: 16px;
+      margin-top: 12px;
+
+      &__form {
+        gap: 12px;
+        &.showMode {
+          .editContainer__formInput {
+            padding: 0;
+            max-width: 100%;
+            height: 30px;
+          }
+        }
+        &.editMode {
+          padding: 8px 0;
+          gap: 24px;
+        }
+        &Column {
+          .specialKey {
+            min-width: 200px;
+          }
+        }
+        &Row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          column-gap: 12px;
+        }
+        &Label {
+          span {
+            font-size: 10px;
+            line-height: 12px;
+          }
+        }
+
+        &Grid {
+          grid-template-columns: 1fr;
+          column-gap: 12px;
+          grid-template-rows: auto;
+          row-gap: 12px;
+
+          &Last {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 12px;
+            grid-template-rows: auto;
+            row-gap: 12px;
+          }
+        }
+
+        &Button {
+          width: 100%;
+          background: linear-gradient(
+            135deg,
+            $p_accent 38.24%,
+            $h_togglerActive 70.94%
+          );
+
+          &::before {
+            display: none;
+          }
+
+          &::after {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    &__editButton {
+      bottom: 40px;
+      right: 12px;
+      border-radius: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .editPage {
+    .editContainer {
+      &__form {
+        &Column {
+          .specialKey {
+            min-width: 200px;
+          }
+        }
+        &Grid {
+          &Last {
+            grid-template-columns: 1fr;
+            row-gap: 20px;
+
+            .editContainer__formRow {
+              width: 100%;
+              display: flex;
+              align-items: center;
+
+              .editContainer__formLabel {
+                width: 100%;
+
+                .editContainer__formCheckboxToggler {
+                  margin-left: auto;
+                }
+              }
+            }
+          }
+        }
+
+        &Button {
+          width: 100%;
+          background: linear-gradient(
+            135deg,
+            $p_accent 38.24%,
+            $h_togglerActive 70.94%
+          );
+
+          &::before {
+            display: none;
+          }
+
+          &::after {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    &__editButton {
+      bottom: 40px;
+      right: 12px;
+      border-radius: 16px;
+    }
+  }
+}

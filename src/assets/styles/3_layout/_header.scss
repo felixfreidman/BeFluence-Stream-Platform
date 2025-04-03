@@ -1,0 +1,139 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-color: $n_color800;
+  box-shadow: 0px 8px 28px rgba(1, 5, 17, 0.3);
+  padding: 40px 0 20px;
+  border-right: 1px solid #0b1739;
+  gap: 20px;
+  width: 320px;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  &__logo {
+    width: 100%;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &Img {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      min-height: 40px;
+      border-radius: 50%;
+    }
+
+    &Text {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 22px;
+      color: $n_color100;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 4px;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    &Item {
+      width: 100%;
+      padding: 14px 40px 14px 28px;
+      gap: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      cursor: pointer;
+
+      &:hover {
+        .header__listItemImg {
+          path {
+            fill: $p_accent;
+          }
+        }
+
+        .header__listItemArrow {
+          path {
+            stroke: $p_accent;
+          }
+        }
+
+        .header__listItemContent {
+          color: $p_accent;
+        }
+      }
+
+      &:last-child {
+        margin-top: auto;
+      }
+
+      &Container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: 6px;
+      }
+
+      &Img {
+        width: 14px;
+        height: 14px;
+        min-width: 14px;
+        min-height: 14px;
+        transition: all 0.3s ease;
+
+        path {
+          transition: all 0.3s ease;
+        }
+      }
+
+      &Content {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 14px;
+        color: $n_color400;
+        margin-right: auto;
+        transition: all 0.3s ease;
+      }
+
+      &Arrow {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease;
+      }
+    }
+
+    &Divider {
+      margin-top: 16px;
+      margin-bottom: 16px;
+      height: 1px;
+      width: 100%;
+      background: rgba($color: $n_color100, $alpha: 0.2);
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .header {
+    padding: 12px;
+    width: 100%;
+    height: 64px;
+    z-index: 30;
+
+    &__logo {
+      padding: 0;
+      gap: 12px;
+    }
+
+    &__list {
+      display: none;
+    }
+  }
+}

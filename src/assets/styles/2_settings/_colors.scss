@@ -1,22 +1,29 @@
 // Primary Colors
 
 $p_accent: #bbf83b;
+$p_warning: #dc2b2b;
 
 // Secondary Colors
 
-$s_black: #101935;
-$s_violet: #343b4f;
-$s_lgBlue: #57c3ff;
-$s_blue: #9a91fb;
-$s_orange: #fdb52a;
+$s_color1: #101935;
+$s_color2: #343b4f;
+$s_color3: #57c3ff;
+$s_color4: #9a91fb;
+$s_color5: #fdb52a;
 
 // Neutral Colors
 
+$n_color900: #0b1739;
 $n_color800: #080f25;
-$n_color700: #212c4d;
+$n_color700: #0a1330;
 $n_color600: #37446b;
 $n_color500: #7e89ac;
 $n_color400: #aeb9e1;
 $n_color300: #d1dbf9;
 $n_color200: #d9e1fa;
 $n_color100: #ffffff;
+
+// Helper Colors
+
+$h_togglerActive: #32d74b;
+$h_togglerInactive: #787880;

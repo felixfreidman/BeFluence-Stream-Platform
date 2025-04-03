@@ -1,0 +1,177 @@
+.layoutContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 16px;
+
+  &:last-child {
+    margin-left: auto;
+  }
+
+  &__button {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $n_color700;
+    border: 1px solid $s_color2;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: $p_accent;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    path {
+      transition: all 0.3s ease;
+    }
+
+    &.openFilters {
+      &:hover {
+        path {
+          fill: $p_accent;
+        }
+      }
+    }
+
+    &.setTable {
+      &:hover {
+        path {
+          stroke: $p_accent;
+        }
+      }
+    }
+
+    &Active.setTable {
+      border-color: $p_accent;
+      path {
+        stroke: $p_accent;
+      }
+    }
+
+    &.setGrid {
+      &:hover {
+        path {
+          fill: $p_accent;
+        }
+      }
+    }
+
+    &Active.setGrid {
+      border-color: $p_accent;
+      path {
+        fill: $p_accent;
+      }
+    }
+
+    .leftArrow {
+      transform: rotate(180deg);
+    }
+
+    .rightArrow {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .filterLayout {
+    position: fixed;
+    right: 16px;
+    bottom: 24px;
+    z-index: 30;
+  }
+  .layoutContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 16px;
+
+    &:last-child {
+      margin-left: auto;
+    }
+
+    &__button {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $n_color700;
+      border: 1px solid $s_color2;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: $p_accent;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      path {
+        transition: all 0.3s ease;
+      }
+
+      &.openFilters {
+        &:hover {
+          path {
+            fill: $p_accent;
+          }
+        }
+      }
+
+      &.setTable {
+        &:hover {
+          path {
+            stroke: $p_accent;
+          }
+        }
+      }
+
+      &Active.setTable {
+        border-color: $p_accent;
+        path {
+          stroke: $p_accent;
+        }
+      }
+
+      &.setGrid {
+        &:hover {
+          path {
+            fill: $p_accent;
+          }
+        }
+      }
+
+      &Active.setGrid {
+        border-color: $p_accent;
+        path {
+          fill: $p_accent;
+        }
+      }
+
+      .leftArrow {
+        transform: rotate(180deg);
+      }
+
+      .rightArrow {
+        transform: rotate(0deg);
+      }
+    }
+  }
+}
