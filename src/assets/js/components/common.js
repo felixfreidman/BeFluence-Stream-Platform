@@ -34,11 +34,6 @@ function reportWindowSize() {
 }
 
 function calcZoom(initZoom, initWidth, currentWidth, zoomLevelPerPixel) {
-    console.log(initZoom);
-    console.log(initWidth);
-    console.log(currentWidth);
-    console.log(zoomLevelPerPixel);
-
     let zoomLevel = initZoom - ((initWidth - currentWidth) * zoomLevelPerPixel);
     wrapperZoom.style.zoom = zoomLevel;
 }

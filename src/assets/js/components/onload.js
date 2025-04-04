@@ -30,10 +30,10 @@ function initLayout() {
             layoutTable.classList.remove('mainPage__layoutActive')
             break;
         default:
-            setTableButton.classList.add('layoutContainer__buttonActive')
-            setGridButton.classList.remove('layoutContainer__buttonActive')
-            layoutTable.classList.add('mainPage__layoutActive')
-            layoutGrid.classList.remove('mainPage__layoutActive')
+            setGridButton.classList.add('layoutContainer__buttonActive')
+            setTableButton.classList.remove('layoutContainer__buttonActive')
+            layoutGrid.classList.add('mainPage__layoutActive')
+            layoutTable.classList.remove('mainPage__layoutActive')
             break;
     }
 }
@@ -64,7 +64,7 @@ function setFormInactive(nodeList) {
     nodeList.forEach(node => {
         node.setAttribute('readonly', true);
         node.setAttribute('disabled', true);
-        if (node.getAttribute('data-show')) {
+        if (node.getAttribute('data-show') !== '') {
             node.setAttribute('placeholder', node.getAttribute('data-show'))
         }
         node.classList.add('showModeActive')

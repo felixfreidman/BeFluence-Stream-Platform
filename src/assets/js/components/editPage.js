@@ -73,7 +73,7 @@ function setFormActive(nodeList) {
     nodeList.forEach(node => {
         node.removeAttribute('readonly');
         node.removeAttribute('disabled');
-        if (node.getAttribute('data-edit')) {
+        if (node.getAttribute('data-edit') !== '') {
             node.setAttribute('placeholder', node.getAttribute('data-edit'))
         }
         node.classList.remove('showModeActive')
