@@ -1,9 +1,9 @@
 <?php
 /**
- * QQ Theme functions and definitions
+ * beflumece Theme functions and definitions
  *
  */
-function qq_theme_support()
+function befluence_theme_support()
 {
     wp_enqueue_style("style.min.css", 'all');
     add_theme_support('post-thumbnails');
@@ -12,7 +12,7 @@ function qq_theme_support()
     add_theme_support('title-tag');
 }
 
-add_action("after_setup_theme", "qq_theme_support");
+add_action("after_setup_theme", "befluence_theme_support");
 
 // Настройка для админки
 
@@ -29,20 +29,20 @@ if (function_exists('acf_add_options_page')) {
 
 // Register Styles and Scripts
 
-function qq_register_styles()
+function beflumece_register_styles()
 {
 
     wp_enqueue_style('main-style-css', get_stylesheet_uri() . "/main.min.css");
 }
 
-add_action('wp_enqueue_scripts', 'qq_register_styles');
+add_action('wp_enqueue_scripts', 'beflumece_register_styles');
 
-function qq_register_scripts()
+function beflumece_register_scripts()
 {
     wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.min.js');
 }
 
-add_action('wp_enqueue_scripts', 'qq_register_scripts');
+add_action('wp_enqueue_scripts', 'beflumece_register_scripts');
 
 // AJAX и отправка писем
 
