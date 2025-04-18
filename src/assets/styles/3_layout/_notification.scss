@@ -1,0 +1,43 @@
+.notifcation {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  z-index: 200;
+  gap: 8px;
+  transition: all 0.5s ease;
+
+  &__container {
+    width: fit-content;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 1px solid $n_color900;
+    background-color: $p_accent;
+    transform: translateX(0) !important;
+    transition: all 0.5s ease;
+  }
+
+  &__value {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    color: $n_color900;
+  }
+}
+
+.jsRightHidden {
+  right: -200px !important;
+}
+
+.jsHiddenRightTransformX {
+  transform: translateX(600px) !important;
+}
+
+@media screen and (max-width: 960px) {
+  .notifcation {
+    right: 16px;
+    top: 16px;
+  }
+}

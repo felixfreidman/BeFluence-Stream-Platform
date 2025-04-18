@@ -1,11 +1,14 @@
 window.addEventListener('load', () => {
-    if (document.querySelector('main').classList.contains('mainPage')) {
+    if (document.querySelector('main').classList.contains('mainPage') ||
+        document.querySelector('main').classList.contains('searchPage')) {
         initLayout()
     }
 
     if (document.querySelector('main').classList.contains('editPage')) {
-        initFormInactive()
-        initCountTextareaValue()
+        initFormInactive();
+        initCountTextareaValue();
+        setNumberWithSpaces();
+        setCurrencyToInput();
     }
 })
 
@@ -58,12 +61,31 @@ function initFormInactive() {
     const personalTextarea = editDataForm.querySelectorAll('textarea');
     setFormInactive(allPersonalInputs)
     setFormInactive(personalTextarea)
+
+}
+
+function setNumberWithSpaces() {
+    const editDataForm = document.querySelector('.editContainer__form');
+    const autoSpacingInputs = editDataForm.querySelectorAll('.autoSpacing');
+    autoSpacingInputs.forEach(input => {
+        input.value = input.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    })
+}
+
+function setCurrencyToInput() {
+    const editDataForm = document.querySelector('.editContainer__form');
+    const autoMoneyInputs = editDataForm.querySelectorAll('.autoMoney');
+    autoMoneyInputs.forEach(input => {
+        input.value = `$ ${input.value}`;
+    })
 }
 
 function setFormInactive(nodeList) {
     nodeList.forEach(node => {
         node.setAttribute('readonly', true);
-        node.setAttribute('disabled', true);
+        if (node.classList.contains('editContainer__formCheckbox')) {
+            node.setAttribute('disabled', true);
+        }
         if (node.getAttribute('data-show') !== '') {
             node.setAttribute('placeholder', node.getAttribute('data-show'))
         }

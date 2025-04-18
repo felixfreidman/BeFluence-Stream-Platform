@@ -1,4 +1,5 @@
-if (document.querySelector('main').classList.contains('mainPage')) {
+if (document.querySelector('main').classList.contains('mainPage') ||
+    document.querySelector('main').classList.contains('searchPage')) {
     const setTableButton = document.querySelector('.setTable');
     const setGridButton = document.querySelector('.setGrid');
     const layoutTable = document.querySelector('.mainPage__layoutTable')
