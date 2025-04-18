@@ -202,17 +202,18 @@ gulp.task("sprite:svg", function () {
     .pipe(svgstore({
       inlineSvg: true
     }))
-    .pipe(rename("sprite.php"))
+    .pipe(rename("sprite.html"))
     .pipe(gulp.dest(config.build.sprites))
     .pipe(reload({ stream: true }));
 });
 
 gulp.task("php", function () {
-  return gulp.src(config.src.php)
+  return gulp.src(srcPath + "/php/**/*")
     .pipe(plumber())
-    .pipe(gulp.dest(config.build.php))
+    .pipe(gulp.dest(publicPath))
     .pipe(server.stream());
 });
+
 
 gulp.task("fonts", function () {
   return gulp.src(config.src.fonts)
@@ -230,7 +231,6 @@ gulp.task('fonts:watch', gulp.series('fonts:clean', function () {
 
 gulp.task('watch', function () {
   gulp.watch(config.watch.html, gulp.series('html'));
-  gulp.watch(config.watch.php, gulp.series('php'));
   gulp.watch(config.watch.style, gulp.series('style'));
   gulp.watch(config.watch.js.components, gulp.series('js:components'));
   gulp.watch(config.watch.js.plugins, gulp.series('js:plugins'));
@@ -247,8 +247,8 @@ gulp.task("build",
     "sprite:svg",
     gulp.parallel(
       // "sprite:png",
-      // "html",
-      "php",
+      "html",
+      // "php",
       "style",
       "js",
       "images:build",
@@ -262,6 +262,3 @@ gulp.task("build",
   )
 );
 
-
-// 
-// "gulp-sass": "^4.0.2",
