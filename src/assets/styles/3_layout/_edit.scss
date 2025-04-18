@@ -139,6 +139,7 @@
           border: none !important;
           filter: none !important;
           color: $p_accent !important;
+          cursor: default;
         }
       }
 
@@ -257,6 +258,7 @@
           filter: none !important;
           color: $p_accent !important;
           padding: 0 !important;
+          cursor: default;
         }
 
         &.showModeActive ~ .editContainer__formTextareaSymbolCounter {

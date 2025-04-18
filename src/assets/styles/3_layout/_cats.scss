@@ -1,0 +1,265 @@
+.catsPage {
+  height: 100%;
+  &__searchLabel {
+    margin-left: 50px;
+    position: relative;
+    max-width: 352px;
+    width: 352px;
+    height: 42px;
+
+    &:hover {
+      path {
+        stroke: $p_accent;
+      }
+    }
+
+    &Img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      left: 14px;
+      width: 16px;
+      height: 16px;
+      z-index: 2;
+
+      path {
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  &__searchInput {
+    width: 100%;
+    height: 42px;
+    filter: drop-shadow(0px 2px 4px rgba(1, 5, 17, 0.2));
+    background-color: $n_color900;
+    border: 1px solid $s_color2;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: $n_color400;
+    padding: 14px 14px 14px 38px;
+    outline: none;
+    z-index: 1;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+      color: $n_color400;
+    }
+
+    &:focus {
+      border-color: $p_accent;
+      & ~ .mainPage__searchLabelImg {
+        path {
+          stroke: $p_accent;
+        }
+      }
+    }
+  }
+
+  &__layout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  &__bloggersTable {
+    margin-top: 30px;
+    margin-bottom: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background: $n_color900;
+    border: 1px solid $s_color2;
+    filter: drop-shadow(1px 1px 1px rgba(16, 25, 52, 0.4));
+    border-radius: 12px;
+    overflow: scroll;
+    height: 100%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .bloggersTable {
+    &__mainRow {
+      width: 100%;
+      padding: 25px 35px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid $s_color2;
+    }
+
+    &__mainHeader {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18px;
+      color: $n_color100;
+    }
+
+    &__counter {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 14px;
+      text-align: right;
+      color: $n_color400;
+
+      &Active {
+        color: $p_accent;
+      }
+    }
+
+    &__contentRows {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      width: 100%;
+      overflow: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      min-height: 380px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &__contentRow {
+      position: relative;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      column-gap: 20px;
+      padding: 0 35px;
+      cursor: pointer;
+
+      &:hover {
+        .bloggersTable__edit {
+          opacity: 1;
+        }
+      }
+
+      &:nth-child(odd) {
+        background-color: $n_color700;
+      }
+
+      &:nth-child(even) {
+        background-color: $n_color900;
+      }
+    }
+
+    &__contentCell {
+      padding: 15px 0;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 14px;
+      color: $n_color400;
+      gap: 8px;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .catsPage {
+    height: 100%;
+
+    &__searchLabel {
+      margin-left: 0;
+      width: 100%;
+      max-width: 100%;
+      height: 42px;
+    }
+
+    .bloggersTable {
+      &__mainRow {
+        width: 100%;
+        padding: 25px 35px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid $s_color2;
+      }
+
+      &__mainHeader {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 18px;
+        color: $n_color100;
+      }
+
+      &__counter {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 14px;
+        text-align: right;
+        color: $n_color400;
+
+        &Active {
+          color: $p_accent;
+        }
+      }
+
+      &__contentRows {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+        overflow: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        min-height: 380px;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      &__contentRow {
+        position: relative;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 20px;
+        padding: 0 35px;
+        cursor: pointer;
+
+        &:hover {
+          .bloggersTable__edit {
+            opacity: 1;
+          }
+        }
+
+        &:nth-child(odd) {
+          background-color: $n_color700;
+        }
+
+        &:nth-child(even) {
+          background-color: $n_color900;
+        }
+      }
+
+      &__contentCell {
+        padding: 15px 0;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 14px;
+        color: $n_color400;
+        gap: 8px;
+      }
+    }
+  }
+}
