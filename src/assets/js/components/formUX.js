@@ -2,8 +2,6 @@ if (document.querySelector('main').classList.contains('editPage')) {
     const editDataForm = document.querySelector('.editContainer__form');
     const allPersonalInputs = editDataForm.querySelectorAll('input');
     allPersonalInputs.forEach(input => {
-        console.log(input);
-
         input.addEventListener('click', () => { copyToClipboard(input) })
     })
 }

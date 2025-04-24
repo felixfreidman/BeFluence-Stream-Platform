@@ -142,7 +142,7 @@
                                 <span>Количество подписчиков</span>
                             </label>
                             <input data-show="<?php echo $result->streamer_platformSubs ?>" data-edit="<?php echo $result->streamer_platformSubs ?>" type="text"
-                                name="streamer_platformSubs" id="streamer_platformSubs" class="editContainer__formInput"
+                                name="streamer_platformSubs" id="streamer_platformSubs" class="editContainer__formInput autoSpacing"
                                 placeholder="Пока тут пусто &#58;&#40;" value="<?php echo $result->streamer_platformSubs ?>">
                         </div>
                         <div class="editContainer__formRow">
@@ -158,7 +158,7 @@
                             </label>
                             <input data-show="<?php echo $result->streamer_platformOnline ?> &#58;&#40;" data-edit="<?php echo $result->streamer_platformOnline ?>" type="text"
                                 name="streamer_platformOnline" id="streamer_platformOnline"
-                                class="editContainer__formInput" placeholder="Пока тут пусто &#58;&#40;" value="<?php echo $result->streamer_platformOnline ?>">
+                                class="editContainer__formInput autoSpacing" placeholder="Пока тут пусто &#58;&#40;" value="<?php echo $result->streamer_platformOnline ?>">
                         </div>
                         <div class="editContainer__formRow">
                             <label for="streamer_adPrice" class="editContainer__formLabel">

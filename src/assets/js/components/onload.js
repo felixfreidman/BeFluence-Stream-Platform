@@ -1,7 +1,12 @@
 window.addEventListener('load', () => {
-    if (document.querySelector('main').classList.contains('mainPage') ||
-        document.querySelector('main').classList.contains('searchPage')) {
-        initLayout()
+    if (document.querySelector('main').classList.contains('mainPage')) {
+        initLayout();
+        setNumberWithSpacesOnMain();
+    }
+
+    if (document.querySelector('main').classList.contains('searchPage')) {
+        initLayout();
+        setNumberWithSpacesOnSearch();
     }
 
     if (document.querySelector('main').classList.contains('editPage')) {
@@ -62,6 +67,22 @@ function initFormInactive() {
     setFormInactive(allPersonalInputs)
     setFormInactive(personalTextarea)
 
+}
+
+function setNumberWithSpacesOnMain() {
+    const mainPage = document.querySelector('.mainPage');
+    const autoSpacingValues = mainPage.querySelectorAll('.autoSpacing');
+    autoSpacingValues.forEach(value => {
+        value.textContent = value.textContent.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    })
+}
+
+function setNumberWithSpacesOnSearch() {
+    const mainPage = document.querySelector('.searchPage');
+    const autoSpacingValues = mainPage.querySelectorAll('.autoSpacing');
+    autoSpacingValues.forEach(value => {
+        value.textContent = value.textContent.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    })
 }
 
 function setNumberWithSpaces() {

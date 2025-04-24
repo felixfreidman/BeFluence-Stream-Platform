@@ -1,0 +1,59 @@
+.errorPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  &__errorHeader {
+    color: $p_accent;
+    font-weight: 600;
+    font-size: 355px;
+    line-height: 430px;
+  }
+
+  &__errorSubheader {
+    color: $p_accent;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 46px;
+    text-align: center;
+
+    a {
+      color: $s_color5;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .errorPage {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__errorHeader {
+      font-size: 100px;
+      line-height: 100%;
+    }
+
+    &__errorSubheader {
+      font-size: 32px;
+      line-height: 120%;
+    }
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .errorPage {
+    min-height: 80vh;
+    &__errorHeader {
+      font-size: 80px;
+      line-height: 100%;
+    }
+
+    &__errorSubheader {
+      font-size: 20px;
+      line-height: 120%;
+    }
+  }
+}

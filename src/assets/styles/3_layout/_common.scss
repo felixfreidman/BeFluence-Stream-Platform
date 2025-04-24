@@ -63,9 +63,23 @@
   display: none !important;
 }
 
+#jsPrority.jsHidden {
+  display: none !important;
+}
+
+.errorHeader {
+  font-size: 64px;
+  line-height: 100%;
+  color: $p_accent;
+}
+
 .jsOpacityShow {
   opacity: 1 !important;
   pointer-events: all;
+}
+
+.jsTranslateHidden {
+  transform: translateX(300px);
 }
 
 @media screen and (max-width: 960px) {
@@ -90,5 +104,9 @@
     &__pageHeader {
       display: none;
     }
+  }
+
+  .errorHeader {
+    font-size: 34px;
   }
 }

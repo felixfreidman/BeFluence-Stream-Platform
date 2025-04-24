@@ -81,6 +81,11 @@
         $pageCount = intdiv($pageTotal,$pageShow);
     }
 
+    if($pageCount < $pageListInt) {
+        header("Location: http://localhost:3001/BeFluence/wp/404");
+        exit;
+    }
+
     // Default links for pagination buttons
 
     $pageListPrev = '/pagination?list=' . $pageList - 1;
@@ -289,7 +294,7 @@
                                 </svg>
                                 <span>Подписчики:</span>
                             </span>
-                            <span class="gridTile__infoContainerValue"><?php echo $result->streamer_platformSubs ?></span>
+                            <span class="gridTile__infoContainerValue autoSpacing"><?php echo $result->streamer_platformSubs ?></span>
                         </div>
                         <div class="gridTile__infoContainerRow">
                             <span class="gridTile__infoContainerKey">
